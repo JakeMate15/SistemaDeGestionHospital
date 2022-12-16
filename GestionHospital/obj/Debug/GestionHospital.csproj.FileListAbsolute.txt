@@ -1,0 +1,11 @@
+C:\Users\erikm\source\repos\GestionHospital\GestionHospital\bin\Debug\GestionHospital.exe.config
+C:\Users\erikm\source\repos\GestionHospital\GestionHospital\bin\Debug\GestionHospital.exe
+C:\Users\erikm\source\repos\GestionHospital\GestionHospital\bin\Debug\GestionHospital.pdb
+C:\Users\erikm\source\repos\GestionHospital\GestionHospital\obj\Debug\GestionHospital.csproj.AssemblyReference.cache
+C:\Users\erikm\source\repos\GestionHospital\GestionHospital\obj\Debug\GestionHospital.csproj.SuggestedBindingRedirects.cache
+C:\Users\erikm\source\repos\GestionHospital\GestionHospital\obj\Debug\GestionHospital.Form1.resources
+C:\Users\erikm\source\repos\GestionHospital\GestionHospital\obj\Debug\GestionHospital.Properties.Resources.resources
+C:\Users\erikm\source\repos\GestionHospital\GestionHospital\obj\Debug\GestionHospital.csproj.GenerateResource.cache
+C:\Users\erikm\source\repos\GestionHospital\GestionHospital\obj\Debug\GestionHospital.csproj.CoreCompileInputs.cache
+C:\Users\erikm\source\repos\GestionHospital\GestionHospital\obj\Debug\GestionHospital.exe
+C:\Users\erikm\source\repos\GestionHospital\GestionHospital\obj\Debug\GestionHospital.pdb
