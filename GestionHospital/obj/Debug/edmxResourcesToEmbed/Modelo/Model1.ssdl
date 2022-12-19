@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HospitalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cita">
+    <Key>
+      <PropertyRef Name="idCita" />
+    </Key>
+    <Property Name="idCita" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idEmpleado" Type="int" Nullable="false" />
+    <Property Name="idPaciente" Type="int" Nullable="false" />
+    <Property Name="idLugar" Type="int" Nullable="false" />
+    <Property Name="fechaInicio" Type="datetime" Nullable="false" />
+    <Property Name="fechaSalida" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DiaJornada">
+    <Key>
+      <PropertyRef Name="idDia" />
+    </Key>
+    <Property Name="idDia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dia" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="idJornada" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Direccion">
+    <Key>
+      <PropertyRef Name="idDireccion" />
+    </Key>
+    <Property Name="idDireccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Calle" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Numero" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Colonia" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CP" Type="varchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="idEmpleado" />
+    </Key>
+    <Property Name="idEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idPersona" Type="int" Nullable="false" />
+    <Property Name="idTipoTrabajador" Type="int" Nullable="false" />
+    <Property Name="idEspecialidad" Type="int" Nullable="false" />
+    <Property Name="idJornada" Type="int" Nullable="false" />
+    <Property Name="Salario" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Especialidad">
+    <Key>
+      <PropertyRef Name="IdEspecialidad" />
+    </Key>
+    <Property Name="IdEspecialidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Especialidad" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estudios">
+    <Key>
+      <PropertyRef Name="idEstudio" />
+    </Key>
+    <Property Name="idEstudio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Costo" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Historial">
+    <Key>
+      <PropertyRef Name="idHistorial" />
+    </Key>
+    <Property Name="idHistorial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idPaciente" Type="int" Nullable="false" />
+    <Property Name="idCita" Type="int" Nullable="false" />
+    <Property Name="Costo" Type="money" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HistorialEstudios">
+    <Key>
+      <PropertyRef Name="idHistorialEstudios" />
+    </Key>
+    <Property Name="idHistorialEstudios" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idHistorial" Type="int" Nullable="false" />
+    <Property Name="idEstudio" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HistorialMedicamento">
+    <Key>
+      <PropertyRef Name="idHistorialMedicamento" />
+    </Key>
+    <Property Name="idHistorialMedicamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idHistorial" Type="int" Nullable="false" />
+    <Property Name="idMedicamento" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HistorialTratamiento">
+    <Key>
+      <PropertyRef Name="idHistorialTratamiento" />
+    </Key>
+    <Property Name="idHistorialTratamiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idHistorial" Type="int" Nullable="false" />
+    <Property Name="idTratamiento" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Jornada">
+    <Key>
+      <PropertyRef Name="idJornada" />
+    </Key>
+    <Property Name="idJornada" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="horaInicio" Type="time" Precision="7" Nullable="false" />
+    <Property Name="horaFin" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lugar">
+    <Key>
+      <PropertyRef Name="idLugar" />
+    </Key>
+    <Property Name="idLugar" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoLugar" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Disponibilidad" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Medicamento">
+    <Key>
+      <PropertyRef Name="idMedicamento" />
+    </Key>
+    <Property Name="idMedicamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Costo" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Paciente">
+    <Key>
+      <PropertyRef Name="idPaciente" />
+    </Key>
+    <Property Name="idPaciente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idPersona" Type="int" Nullable="false" />
+    <Property Name="Altura" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Peso" Type="varchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Persona">
+    <Key>
+      <PropertyRef Name="idPersona" />
+    </Key>
+    <Property Name="idPersona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Paterno" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Materno" Type="varchar" MaxLength="20" />
+    <Property Name="idDireccion" Type="int" Nullable="false" />
+    <Property Name="Telefono" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Mail" Type="varchar" MaxLength="30" />
+    <Property Name="fechaNac" Type="datetime" Nullable="false" />
+    <Property Name="Sexo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TipoTrabajador">
+    <Key>
+      <PropertyRef Name="idTipoTrabajador" />
+    </Key>
+    <Property Name="idTipoTrabajador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipoTrabajador" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tratamiento">
+    <Key>
+      <PropertyRef Name="idTratamiento" />
+    </Key>
+    <Property Name="idTratamiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Costo" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="IdEmpleado" Type="int" Nullable="false" />
+    <Property Name="Contraseña" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Cita_Empleado">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Cita" Type="Self.Cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="idEmpleado" />
+      </Principal>
+      <Dependent Role="Cita">
+        <PropertyRef Name="idEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cita_Lugar">
+    <End Role="Lugar" Type="Self.Lugar" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Cita" Type="Self.Cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lugar">
+        <PropertyRef Name="idLugar" />
+      </Principal>
+      <Dependent Role="Cita">
+        <PropertyRef Name="idLugar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cita_Paciente">
+    <End Role="Paciente" Type="Self.Paciente" Multiplicity="1" />
+    <End Role="Cita" Type="Self.Cita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="idPaciente" />
+      </Principal>
+      <Dependent Role="Cita">
+        <PropertyRef Name="idPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiaJornada_Jornada">
+    <End Role="Jornada" Type="Self.Jornada" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DiaJornada" Type="Self.DiaJornada" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jornada">
+        <PropertyRef Name="idJornada" />
+      </Principal>
+      <Dependent Role="DiaJornada">
+        <PropertyRef Name="idJornada" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleado_Especialidad">
+    <End Role="Especialidad" Type="Self.Especialidad" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Especialidad">
+        <PropertyRef Name="IdEspecialidad" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="idEspecialidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleado_Jornada">
+    <End Role="Jornada" Type="Self.Jornada" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Jornada">
+        <PropertyRef Name="idJornada" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="idJornada" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleado_Persona">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="idPersona" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="idPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleado_TipoTrabajador">
+    <End Role="TipoTrabajador" Type="Self.TipoTrabajador" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoTrabajador">
+        <PropertyRef Name="idTipoTrabajador" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="idTipoTrabajador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Historial_Cita">
+    <End Role="Cita" Type="Self.Cita" Multiplicity="1" />
+    <End Role="Historial" Type="Self.Historial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cita">
+        <PropertyRef Name="idCita" />
+      </Principal>
+      <Dependent Role="Historial">
+        <PropertyRef Name="idCita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Historial_Paciente">
+    <End Role="Paciente" Type="Self.Paciente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Historial" Type="Self.Historial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="idPaciente" />
+      </Principal>
+      <Dependent Role="Historial">
+        <PropertyRef Name="idPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialEstudios_Estudios">
+    <End Role="Estudios" Type="Self.Estudios" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HistorialEstudios" Type="Self.HistorialEstudios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estudios">
+        <PropertyRef Name="idEstudio" />
+      </Principal>
+      <Dependent Role="HistorialEstudios">
+        <PropertyRef Name="idEstudio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialEstudios_Historial">
+    <End Role="Historial" Type="Self.Historial" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HistorialEstudios" Type="Self.HistorialEstudios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Historial">
+        <PropertyRef Name="idHistorial" />
+      </Principal>
+      <Dependent Role="HistorialEstudios">
+        <PropertyRef Name="idHistorial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialMedicamento_Historial">
+    <End Role="Historial" Type="Self.Historial" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HistorialMedicamento" Type="Self.HistorialMedicamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Historial">
+        <PropertyRef Name="idHistorial" />
+      </Principal>
+      <Dependent Role="HistorialMedicamento">
+        <PropertyRef Name="idHistorial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialMedicamento_Medicamento">
+    <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HistorialMedicamento" Type="Self.HistorialMedicamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medicamento">
+        <PropertyRef Name="idMedicamento" />
+      </Principal>
+      <Dependent Role="HistorialMedicamento">
+        <PropertyRef Name="idMedicamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialTratamiento_Historial">
+    <End Role="Historial" Type="Self.Historial" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HistorialTratamiento" Type="Self.HistorialTratamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Historial">
+        <PropertyRef Name="idHistorial" />
+      </Principal>
+      <Dependent Role="HistorialTratamiento">
+        <PropertyRef Name="idHistorial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistorialTratamiento_Tratamiento">
+    <End Role="Tratamiento" Type="Self.Tratamiento" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HistorialTratamiento" Type="Self.HistorialTratamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tratamiento">
+        <PropertyRef Name="idTratamiento" />
+      </Principal>
+      <Dependent Role="HistorialTratamiento">
+        <PropertyRef Name="idTratamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Paciente_Persona">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Paciente" Type="Self.Paciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="idPersona" />
+      </Principal>
+      <Dependent Role="Paciente">
+        <PropertyRef Name="idPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Persona_Direccion">
+    <End Role="Direccion" Type="Self.Direccion" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Persona" Type="Self.Persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Direccion">
+        <PropertyRef Name="idDireccion" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="idDireccion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIO_EMPLEADO">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="idEmpleado" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="IdEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HospitalModelStoreContainer">
+    <EntitySet Name="Cita" EntityType="Self.Cita" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DiaJornada" EntityType="Self.DiaJornada" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Direccion" EntityType="Self.Direccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Especialidad" EntityType="Self.Especialidad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estudios" EntityType="Self.Estudios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Historial" EntityType="Self.Historial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HistorialEstudios" EntityType="Self.HistorialEstudios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HistorialMedicamento" EntityType="Self.HistorialMedicamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HistorialTratamiento" EntityType="Self.HistorialTratamiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Jornada" EntityType="Self.Jornada" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lugar" EntityType="Self.Lugar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Medicamento" EntityType="Self.Medicamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Paciente" EntityType="Self.Paciente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Persona" EntityType="Self.Persona" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoTrabajador" EntityType="Self.TipoTrabajador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tratamiento" EntityType="Self.Tratamiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Cita_Empleado" Association="Self.FK_Cita_Empleado">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Cita" EntitySet="Cita" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cita_Lugar" Association="Self.FK_Cita_Lugar">
+      <End Role="Lugar" EntitySet="Lugar" />
+      <End Role="Cita" EntitySet="Cita" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cita_Paciente" Association="Self.FK_Cita_Paciente">
+      <End Role="Paciente" EntitySet="Paciente" />
+      <End Role="Cita" EntitySet="Cita" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiaJornada_Jornada" Association="Self.FK_DiaJornada_Jornada">
+      <End Role="Jornada" EntitySet="Jornada" />
+      <End Role="DiaJornada" EntitySet="DiaJornada" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleado_Especialidad" Association="Self.FK_Empleado_Especialidad">
+      <End Role="Especialidad" EntitySet="Especialidad" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleado_Jornada" Association="Self.FK_Empleado_Jornada">
+      <End Role="Jornada" EntitySet="Jornada" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleado_Persona" Association="Self.FK_Empleado_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleado_TipoTrabajador" Association="Self.FK_Empleado_TipoTrabajador">
+      <End Role="TipoTrabajador" EntitySet="TipoTrabajador" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Historial_Cita" Association="Self.FK_Historial_Cita">
+      <End Role="Cita" EntitySet="Cita" />
+      <End Role="Historial" EntitySet="Historial" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Historial_Paciente" Association="Self.FK_Historial_Paciente">
+      <End Role="Paciente" EntitySet="Paciente" />
+      <End Role="Historial" EntitySet="Historial" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialEstudios_Estudios" Association="Self.FK_HistorialEstudios_Estudios">
+      <End Role="Estudios" EntitySet="Estudios" />
+      <End Role="HistorialEstudios" EntitySet="HistorialEstudios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialEstudios_Historial" Association="Self.FK_HistorialEstudios_Historial">
+      <End Role="Historial" EntitySet="Historial" />
+      <End Role="HistorialEstudios" EntitySet="HistorialEstudios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialMedicamento_Historial" Association="Self.FK_HistorialMedicamento_Historial">
+      <End Role="Historial" EntitySet="Historial" />
+      <End Role="HistorialMedicamento" EntitySet="HistorialMedicamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialMedicamento_Medicamento" Association="Self.FK_HistorialMedicamento_Medicamento">
+      <End Role="Medicamento" EntitySet="Medicamento" />
+      <End Role="HistorialMedicamento" EntitySet="HistorialMedicamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialTratamiento_Historial" Association="Self.FK_HistorialTratamiento_Historial">
+      <End Role="Historial" EntitySet="Historial" />
+      <End Role="HistorialTratamiento" EntitySet="HistorialTratamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistorialTratamiento_Tratamiento" Association="Self.FK_HistorialTratamiento_Tratamiento">
+      <End Role="Tratamiento" EntitySet="Tratamiento" />
+      <End Role="HistorialTratamiento" EntitySet="HistorialTratamiento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Paciente_Persona" Association="Self.FK_Paciente_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Paciente" EntitySet="Paciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Persona_Direccion" Association="Self.FK_Persona_Direccion">
+      <End Role="Direccion" EntitySet="Direccion" />
+      <End Role="Persona" EntitySet="Persona" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIO_EMPLEADO" Association="Self.FK_USUARIO_EMPLEADO">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a2222de0ea4549768432f4f38b49716e" Name="Diagram1">
+        <EntityTypeShape EntityType="HospitalModel.Cita" Width="1.5" PointX="8.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.DiaJornada" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Direccion" Width="1.5" PointX="1.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Empleado" Width="1.5" PointX="6" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Especialidad" Width="1.5" PointX="3.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Estudios" Width="1.5" PointX="10.5" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Historial" Width="1.5" PointX="10.5" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.HistorialEstudios" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.HistorialMedicamento" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.HistorialTratamiento" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Jornada" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Lugar" Width="1.5" PointX="6" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Medicamento" Width="1.5" PointX="10.5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Paciente" Width="1.5" PointX="6" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Persona" Width="1.5" PointX="3.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.TipoTrabajador" Width="1.5" PointX="3.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Tratamiento" Width="1.5" PointX="10.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Usuario" Width="1.5" PointX="8.25" PointY="10.5" IsExpanded="true" />
+        <AssociationConnector Association="HospitalModel.FK_Cita_Empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_Cita_Lugar" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_Cita_Paciente" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_Historial_Cita" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_DiaJornada_Jornada" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_Persona_Direccion" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_Empleado_Especialidad" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_Empleado_Jornada" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_Empleado_Persona" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_Empleado_TipoTrabajador" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_USUARIO_EMPLEADO" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_HistorialEstudios_Estudios" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_Historial_Paciente" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_HistorialEstudios_Historial" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_HistorialMedicamento_Historial" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_HistorialTratamiento_Historial" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_HistorialMedicamento_Medicamento" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_HistorialTratamiento_Tratamiento" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_Paciente_Persona" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
