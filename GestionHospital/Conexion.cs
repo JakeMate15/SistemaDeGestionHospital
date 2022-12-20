@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace GestionHospital
 {
-    internal class Class1
+    internal class Conexion
     {
+
+
     }
 }
