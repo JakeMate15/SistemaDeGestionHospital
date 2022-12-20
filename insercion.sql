@@ -175,3 +175,47 @@ from Persona as per
 					   ON c.idEmpleado = e.idEmpleado 
 					where t.tipoTrabajador = 'Enfermera' and Nombre='Frida' and Paterno='Hernandez') as con
 	ON con.idPaciente = pac.idPaciente
+
+
+
+select Nombre + ' ' + paterno + ' ' + ISNULL(materno,'') as Nombre, idCita,fechaInicio,fechaSalida
+from Persona as per
+	inner join
+	Paciente as pac
+	on per.idPersona = pac.idPersona
+	INNER JOIN
+	(SELECT idPaciente,idCita,fechaInicio,fechaSalida
+					FROM Empleado AS e
+					   INNER JOIN
+					   TipoTrabajador as t
+					   ON e.idTipoTrabajador = t.idTipoTrabajador
+					   INNER JOIN
+					   Persona AS p
+					   ON e.idPersona = p.idPersona
+					   INNER JOIN
+					   Cita as c
+					   ON c.idEmpleado = e.idEmpleado 
+					where t.tipoTrabajador = 'Médico' and Nombre='Erik' and Paterno='Morales') as con
+	ON con.idPaciente = pac.idPaciente
+   where fechaSalida >= getdate()
+
+
+
+            try
+            {
+                conexion.Open();
+                SqlCommand comando = new SqlCommand("", conexion);
+                comando.Parameters.AddWithValue("nombre", nombre);
+                comando.Parameters.AddWithValue("paterno", paterno);
+
+                SqlDataAdapter consulta = new SqlDataAdapter(comando);
+                DataTable dt = new DataTable();
+                consulta.Fill(dt);
+
+                .DataSource= dt;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally { conexion.Close(); }

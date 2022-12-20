@@ -93,6 +93,7 @@
             this.consultaCitas.TabIndex = 25;
             this.consultaCitas.Text = "Consultar Citas";
             this.consultaCitas.UseVisualStyleBackColor = true;
+            this.consultaCitas.Click += new System.EventHandler(this.consultaCitas_Click);
             // 
             // listaCitas
             // 

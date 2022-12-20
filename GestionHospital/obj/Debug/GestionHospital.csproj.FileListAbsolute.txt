@@ -47,3 +47,8 @@ C:\Users\erikm\OneDrive\Escritorio\SistemaDeGestionHospital\GestionHospital\obj\
 C:\Users\erikm\OneDrive\Escritorio\SistemaDeGestionHospital\GestionHospital\obj\Debug\GestionHospital.csproj.CopyComplete
 C:\Users\erikm\OneDrive\Escritorio\SistemaDeGestionHospital\GestionHospital\obj\Debug\GestionHospital.exe
 C:\Users\erikm\OneDrive\Escritorio\SistemaDeGestionHospital\GestionHospital\obj\Debug\GestionHospital.pdb
+C:\Users\erikm\Desktop\SistemaDeGestionHospital\GestionHospital\obj\Debug\GestionHospital.AltaPac.resources
+C:\Users\erikm\Desktop\SistemaDeGestionHospital\GestionHospital\obj\Debug\GestionHospital.AltaEmp.resources
+C:\Users\erikm\Desktop\SistemaDeGestionHospital\GestionHospital\obj\Debug\GestionHospital.modDatos.resources
+C:\Users\erikm\Desktop\SistemaDeGestionHospital\GestionHospital\obj\Debug\GestionHospital.AgendaCitaAdmin.resources
+C:\Users\erikm\Desktop\SistemaDeGestionHospital\GestionHospital\obj\Debug\GestionHospital.CreaUsuario.resources

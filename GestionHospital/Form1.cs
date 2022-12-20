@@ -14,11 +14,14 @@ namespace GestionHospital
 
     public partial class Form1 : Form
     {
-        SqlConnection conexion = new SqlConnection(@"data source=DESKTOP-GJ16MIS\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+        //SqlConnection conexion = new SqlConnection(@"data source=DESKTOP-GJ16MIS\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+        SqlConnection conexion = new SqlConnection(@"data source=DESKTOP-I0DIDO3\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
 
 
         public Form1(){
             InitializeComponent();
+            usuario.Text = "Lalo12";
+            cont.Text = "prueba123";
         }
 
         public void loggin(string usuario, string contrasena){

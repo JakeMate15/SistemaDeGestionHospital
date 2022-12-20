@@ -61,7 +61,37 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgendaCitaAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgendaCitaAdmin.Designer.cs">
+      <DependentUpon>AgendaCitaAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregaCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregaCita.Designer.cs">
+      <DependentUpon>AgregaCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AltaEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaEmp.Designer.cs">
+      <DependentUpon>AltaEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AltaPac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaPac.Designer.cs">
+      <DependentUpon>AltaPac.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conexion.cs" />
+    <Compile Include="CreaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreaUsuario.Designer.cs">
+      <DependentUpon>CreaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dr.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +109,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modDatos.Designer.cs">
+      <DependentUpon>modDatos.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Cita.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -157,6 +193,18 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AgendaCitaAdmin.resx">
+      <DependentUpon>AgendaCitaAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AltaEmp.resx">
+      <DependentUpon>AltaEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AltaPac.resx">
+      <DependentUpon>AltaPac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreaUsuario.resx">
+      <DependentUpon>CreaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dr.resx">
       <DependentUpon>Dr.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modDatos.resx">
+      <DependentUpon>modDatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

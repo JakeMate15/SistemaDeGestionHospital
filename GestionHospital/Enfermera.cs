@@ -14,7 +14,8 @@ namespace GestionHospital
 {
     public partial class Enfermera : Form
     {
-        SqlConnection conexion = new SqlConnection(@"data source=DESKTOP-GJ16MIS\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+        //SqlConnection conexion = new SqlConnection(@"data source=DESKTOP-GJ16MIS\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+        SqlConnection conexion = new SqlConnection(@"data source=DESKTOP-I0DIDO3\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
         private string nombre;
         private string paterno;
 
