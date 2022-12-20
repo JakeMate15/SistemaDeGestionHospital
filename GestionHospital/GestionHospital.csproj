@@ -85,6 +85,12 @@
     <Compile Include="AltaPac.Designer.cs">
       <DependentUpon>AltaPac.cs</DependentUpon>
     </Compile>
+    <Compile Include="CitaDesdeDr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CitaDesdeDr.Designer.cs">
+      <DependentUpon>CitaDesdeDr.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="CreaUsuario.cs">
       <SubType>Form</SubType>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AltaPac.resx">
       <DependentUpon>AltaPac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CitaDesdeDr.resx">
+      <DependentUpon>CitaDesdeDr.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreaUsuario.resx">
       <DependentUpon>CreaUsuario.cs</DependentUpon>

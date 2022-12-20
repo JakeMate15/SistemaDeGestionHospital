@@ -14,17 +14,20 @@ namespace GestionHospital
 {
     public partial class Enfermera : Form
     {
+        string cadCon;
         //SqlConnection conexion = new SqlConnection(@"data source=DESKTOP-GJ16MIS\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
-        SqlConnection conexion = new SqlConnection(@"data source=DESKTOP-I0DIDO3\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+        SqlConnection conexion;
         private string nombre;
         private string paterno;
 
-        public Enfermera(string nombre,string paterno)
+        public Enfermera(string nombre,string paterno,string cadCon)
         {
             InitializeComponent();
             this.nombre = nombre;
             this.paterno= paterno;
             lblMensaje.Text = nombre + " " + paterno;
+            this.cadCon = cadCon;
+            conexion = new SqlConnection(cadCon);
         }
 
         private void cerrarS_Click(object sender, EventArgs e)

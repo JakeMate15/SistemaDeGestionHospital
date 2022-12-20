@@ -52,3 +52,4 @@ C:\Users\erikm\Desktop\SistemaDeGestionHospital\GestionHospital\obj\Debug\Gestio
 C:\Users\erikm\Desktop\SistemaDeGestionHospital\GestionHospital\obj\Debug\GestionHospital.modDatos.resources
 C:\Users\erikm\Desktop\SistemaDeGestionHospital\GestionHospital\obj\Debug\GestionHospital.AgendaCitaAdmin.resources
 C:\Users\erikm\Desktop\SistemaDeGestionHospital\GestionHospital\obj\Debug\GestionHospital.CreaUsuario.resources
+C:\Users\erikm\Desktop\SistemaDeGestionHospital\GestionHospital\obj\Debug\GestionHospital.CitaDesdeDr.resources

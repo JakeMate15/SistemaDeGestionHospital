@@ -15,13 +15,16 @@ namespace GestionHospital
     public partial class Form1 : Form
     {
         //SqlConnection conexion = new SqlConnection(@"data source=DESKTOP-GJ16MIS\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
-        SqlConnection conexion = new SqlConnection(@"data source=DESKTOP-I0DIDO3\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+        string cadCon;
+        SqlConnection conexion; 
 
 
         public Form1(){
             InitializeComponent();
-            usuario.Text = "Lalo12";
-            cont.Text = "prueba123";
+            usuario.Text = "Erik12";
+            cont.Text = "hola123";
+            cadCon =  @"data source=DESKTOP-I0DIDO3\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
+            conexion = new SqlConnection(cadCon);
         }
 
         public void loggin(string usuario, string contrasena){
@@ -44,17 +47,17 @@ namespace GestionHospital
                     
                     //Doctor
                     if (dt.Rows[0][2].ToString() == "1"){
-                        new Dr(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString()).Show();
+                        new Dr(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), cadCon).Show();
                     }
 
                     //Enfermera
                     else if (dt.Rows[0][2].ToString() == "2"){
-                        new Enfermera(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString()).Show();
+                        new Enfermera(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), cadCon).Show();
                     }
 
                     //Admin
                     else if (dt.Rows[0][2].ToString() == "3"){
-                        new Admin(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString()).Show();
+                        new Admin(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(),cadCon).Show();
                     }
 
                 }

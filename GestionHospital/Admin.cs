@@ -19,10 +19,10 @@ namespace GestionHospital
         private string nombre;
         private string paterno;
 
-        public Admin(string nombre, string paterno)
+        public Admin(string nombre, string paterno, string cadCon)
         {
             InitializeComponent();
-            cadCon = @"data source=DESKTOP-I0DIDO3\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
+            this.cadCon = cadCon;
             conexion = new SqlConnection(cadCon);
             this.nombre = nombre;
             this.paterno = paterno;

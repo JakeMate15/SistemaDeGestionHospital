@@ -37,14 +37,18 @@
             this.agregaCitas = new System.Windows.Forms.Button();
             this.quitaCita = new System.Windows.Forms.Button();
             this.modCita = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.idPaciente = new System.Windows.Forms.TextBox();
+            this.idCitaHisTxt = new System.Windows.Forms.TextBox();
             this.historial = new System.Windows.Forms.Button();
             this.consultaHistorial = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.idHistorial = new System.Windows.Forms.TextBox();
             this.recetar = new System.Windows.Forms.Button();
             this.historialData = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.idCitaTxt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.descHist = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.listaCitas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.historialData)).BeginInit();
             this.SuspendLayout();
@@ -111,10 +115,11 @@
             this.agregaCitas.TabIndex = 26;
             this.agregaCitas.Text = "Agregar Cita";
             this.agregaCitas.UseVisualStyleBackColor = true;
+            this.agregaCitas.Click += new System.EventHandler(this.agregaCitas_Click);
             // 
             // quitaCita
             // 
-            this.quitaCita.Location = new System.Drawing.Point(284, 60);
+            this.quitaCita.Location = new System.Drawing.Point(522, 60);
             this.quitaCita.Name = "quitaCita";
             this.quitaCita.Size = new System.Drawing.Size(130, 28);
             this.quitaCita.TabIndex = 27;
@@ -123,41 +128,34 @@
             // 
             // modCita
             // 
-            this.modCita.Location = new System.Drawing.Point(420, 60);
+            this.modCita.Location = new System.Drawing.Point(658, 60);
             this.modCita.Name = "modCita";
             this.modCita.Size = new System.Drawing.Size(130, 28);
             this.modCita.TabIndex = 28;
             this.modCita.Text = "Modifica Cita";
             this.modCita.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // idCitaHisTxt
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 271);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "ID Paciente";
-            // 
-            // idPaciente
-            // 
-            this.idPaciente.Location = new System.Drawing.Point(78, 268);
-            this.idPaciente.Name = "idPaciente";
-            this.idPaciente.Size = new System.Drawing.Size(61, 20);
-            this.idPaciente.TabIndex = 29;
+            this.idCitaHisTxt.Location = new System.Drawing.Point(81, 254);
+            this.idCitaHisTxt.Name = "idCitaHisTxt";
+            this.idCitaHisTxt.Size = new System.Drawing.Size(61, 20);
+            this.idCitaHisTxt.TabIndex = 29;
+            this.idCitaHisTxt.TextChanged += new System.EventHandler(this.idPaciente_TextChanged);
             // 
             // historial
             // 
-            this.historial.Location = new System.Drawing.Point(148, 266);
+            this.historial.Location = new System.Drawing.Point(148, 313);
             this.historial.Name = "historial";
             this.historial.Size = new System.Drawing.Size(130, 23);
             this.historial.TabIndex = 31;
             this.historial.Text = "Genera Historial";
             this.historial.UseVisualStyleBackColor = true;
+            this.historial.Click += new System.EventHandler(this.historial_Click);
             // 
             // consultaHistorial
             // 
-            this.consultaHistorial.Location = new System.Drawing.Point(522, 265);
+            this.consultaHistorial.Location = new System.Drawing.Point(658, 261);
             this.consultaHistorial.Name = "consultaHistorial";
             this.consultaHistorial.Size = new System.Drawing.Size(130, 23);
             this.consultaHistorial.TabIndex = 32;
@@ -167,7 +165,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(386, 271);
+            this.label3.Location = new System.Drawing.Point(594, 266);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 34;
@@ -175,14 +173,14 @@
             // 
             // idHistorial
             // 
-            this.idHistorial.Location = new System.Drawing.Point(450, 266);
+            this.idHistorial.Location = new System.Drawing.Point(591, 290);
             this.idHistorial.Name = "idHistorial";
             this.idHistorial.Size = new System.Drawing.Size(61, 20);
             this.idHistorial.TabIndex = 33;
             // 
             // recetar
             // 
-            this.recetar.Location = new System.Drawing.Point(658, 266);
+            this.recetar.Location = new System.Drawing.Point(658, 290);
             this.recetar.Name = "recetar";
             this.recetar.Size = new System.Drawing.Size(130, 23);
             this.recetar.TabIndex = 35;
@@ -192,16 +190,61 @@
             // historialData
             // 
             this.historialData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.historialData.Location = new System.Drawing.Point(15, 295);
+            this.historialData.Location = new System.Drawing.Point(15, 342);
             this.historialData.Name = "historialData";
             this.historialData.Size = new System.Drawing.Size(776, 143);
             this.historialData.TabIndex = 36;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(386, 68);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 13);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "ID Cita";
+            // 
+            // idCitaTxt
+            // 
+            this.idCitaTxt.Location = new System.Drawing.Point(450, 63);
+            this.idCitaTxt.Name = "idCitaTxt";
+            this.idCitaTxt.Size = new System.Drawing.Size(61, 20);
+            this.idCitaTxt.TabIndex = 37;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 261);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "ID Cita";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 290);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.TabIndex = 39;
+            this.label5.Text = "Descripción";
+            // 
+            // descHist
+            // 
+            this.descHist.Location = new System.Drawing.Point(81, 287);
+            this.descHist.Name = "descHist";
+            this.descHist.Size = new System.Drawing.Size(344, 20);
+            this.descHist.TabIndex = 40;
             // 
             // Dr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 495);
+            this.Controls.Add(this.descHist);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.idCitaTxt);
             this.Controls.Add(this.historialData);
             this.Controls.Add(this.recetar);
             this.Controls.Add(this.label3);
@@ -209,7 +252,7 @@
             this.Controls.Add(this.consultaHistorial);
             this.Controls.Add(this.historial);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.idPaciente);
+            this.Controls.Add(this.idCitaHisTxt);
             this.Controls.Add(this.modCita);
             this.Controls.Add(this.quitaCita);
             this.Controls.Add(this.agregaCitas);
@@ -240,13 +283,17 @@
         private System.Windows.Forms.Button agregaCitas;
         private System.Windows.Forms.Button quitaCita;
         private System.Windows.Forms.Button modCita;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox idPaciente;
+        private System.Windows.Forms.TextBox idCitaHisTxt;
         private System.Windows.Forms.Button historial;
         private System.Windows.Forms.Button consultaHistorial;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox idHistorial;
         private System.Windows.Forms.Button recetar;
         private System.Windows.Forms.DataGridView historialData;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox idCitaTxt;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox descHist;
     }
 }
