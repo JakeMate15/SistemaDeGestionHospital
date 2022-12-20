@@ -12,10 +12,36 @@ namespace GestionHospital
 {
     public partial class Admin : Form
     {
-        public Admin(string nombre)
+        public Admin(string nombre, string paterno)
         {
             InitializeComponent();
-            nombreAdmin.Text = nombre;
+            nombreAdmin.Text = nombre + " " + paterno;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void idCitaTxtCosto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cerrarS_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            new Form1().Show();
         }
     }
 }
