@@ -125,6 +125,7 @@
             this.quitaCita.TabIndex = 27;
             this.quitaCita.Text = "Elimina Cita";
             this.quitaCita.UseVisualStyleBackColor = true;
+            this.quitaCita.Click += new System.EventHandler(this.quitaCita_Click);
             // 
             // modCita
             // 
@@ -134,6 +135,7 @@
             this.modCita.TabIndex = 28;
             this.modCita.Text = "Modifica Cita";
             this.modCita.UseVisualStyleBackColor = true;
+            this.modCita.Click += new System.EventHandler(this.modCita_Click);
             // 
             // idCitaHisTxt
             // 
@@ -161,15 +163,16 @@
             this.consultaHistorial.TabIndex = 32;
             this.consultaHistorial.Text = "Consulta Historial";
             this.consultaHistorial.UseVisualStyleBackColor = true;
+            this.consultaHistorial.Click += new System.EventHandler(this.consultaHistorial_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(594, 266);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 34;
-            this.label3.Text = "ID Historial";
+            this.label3.Text = "ID Cita";
             // 
             // idHistorial
             // 
@@ -186,6 +189,7 @@
             this.recetar.TabIndex = 35;
             this.recetar.Text = "Receta";
             this.recetar.UseVisualStyleBackColor = true;
+            this.recetar.Click += new System.EventHandler(this.recetar_Click);
             // 
             // historialData
             // 

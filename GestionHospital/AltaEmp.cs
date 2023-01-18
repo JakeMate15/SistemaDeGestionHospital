@@ -15,14 +15,14 @@ namespace GestionHospital
     public partial class AltaEmp : Form
     {
         //SqlConnection conexion = new SqlConnection(@"data source=DESKTOP-GJ16MIS\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
-        string cadCon;
+        private string cadCon;
         SqlConnection conexion;
 
 
-        public AltaEmp()
+        public AltaEmp(string cadCon)
         {
             InitializeComponent();
-            cadCon = @"data source=DESKTOP-I0DIDO3\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
+            this.cadCon = cadCon;
             conexion = new SqlConnection(cadCon);
             salarioTxt.Text = "10000.1";
 

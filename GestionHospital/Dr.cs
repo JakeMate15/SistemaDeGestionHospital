@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -104,12 +105,58 @@ namespace GestionHospital
 
         private void agregaCitas_Click(object sender, EventArgs e)
         {
-            /*
-             select idEmpleado, Nombre, Paterno from 
-            Persona join Empleado
-            on Persona.idPersona = Empleado.idPersona
-            where Nombre = 'Erik' and Paterno = 'Morales'
-             */
+            new CitaDesdeDr(cadCon).Show();
+        }
+
+        private void quitaCita_Click(object sender, EventArgs e)
+        {
+            string idCita = idCitaTxt.Text;
+
+            try
+            {
+                conexion.Open();
+                SqlCommand comando = new SqlCommand("delete from cita where idCita =" + idCita, conexion);
+
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally { conexion.Close(); }
+        }
+
+        private void modCita_Click(object sender, EventArgs e)
+        {
+            new CambiaFecha(cadCon,idCitaTxt.Text).Show();
+        }
+
+        private void consultaHistorial_Click(object sender, EventArgs e)
+        {
+            string idCita = idHistorial.Text;
+
+            try
+            {
+                conexion.Open();
+                SqlCommand comando = new SqlCommand("select Descripcion from Historial where idCita=" + idCita, conexion);
+
+                SqlDataAdapter consulta = new SqlDataAdapter(comando);
+                DataTable dt = new DataTable();
+                consulta.Fill(dt);
+
+                historialData.DataSource= dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally { conexion.Close(); }
+        }
+
+        private void recetar_Click(object sender, EventArgs e)
+        {
+            new creaReceta(cadCon, idHistorial.Text).Show();
         }
     }
 }

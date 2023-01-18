@@ -118,13 +118,13 @@ namespace GestionHospital
 
         private void altaPac_Click(object sender, EventArgs e)
         {
-            new AltaPac().Show();
+            new AltaPac(cadCon).Show();
 
         }
 
         private void altaEmp_Click(object sender, EventArgs e)
         {
-            new AltaEmp().Show();
+            new AltaEmp(cadCon).Show();
         }
 
         private void verPersonas_Click(object sender, EventArgs e)

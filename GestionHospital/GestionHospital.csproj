@@ -85,6 +85,12 @@
     <Compile Include="AltaPac.Designer.cs">
       <DependentUpon>AltaPac.cs</DependentUpon>
     </Compile>
+    <Compile Include="CambiaFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CambiaFecha.Designer.cs">
+      <DependentUpon>CambiaFecha.cs</DependentUpon>
+    </Compile>
     <Compile Include="CitaDesdeDr.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,12 @@
       <DependentUpon>CitaDesdeDr.cs</DependentUpon>
     </Compile>
     <Compile Include="Conexion.cs" />
+    <Compile Include="creaReceta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="creaReceta.Designer.cs">
+      <DependentUpon>creaReceta.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,8 +220,14 @@
     <EmbeddedResource Include="AltaPac.resx">
       <DependentUpon>AltaPac.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CambiaFecha.resx">
+      <DependentUpon>CambiaFecha.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CitaDesdeDr.resx">
       <DependentUpon>CitaDesdeDr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="creaReceta.resx">
+      <DependentUpon>creaReceta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreaUsuario.resx">
       <DependentUpon>CreaUsuario.cs</DependentUpon>

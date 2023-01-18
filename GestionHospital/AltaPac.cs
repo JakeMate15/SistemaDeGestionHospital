@@ -14,12 +14,16 @@ namespace GestionHospital
 {
     public partial class AltaPac : Form
     {
+        private string cadCon;
+        SqlConnection conexion;
         //SqlConnection conexion = new SqlConnection(@"data source=DESKTOP-GJ16MIS\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
-        SqlConnection conexion = new SqlConnection(@"data source=DESKTOP-I0DIDO3\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
+        //SqlConnection conexion = new SqlConnection(@"data source=DESKTOP-I0DIDO3\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework");
 
-        public AltaPac()
+        public AltaPac(string cadCon)
         {
             InitializeComponent();
+            this.cadCon = cadCon;
+            conexion = new SqlConnection(cadCon);
             sexoOpt.Items.Add("Masculino");
             sexoOpt.Items.Add("Femenino");
             sexoOpt.SelectedIndex = 0;

@@ -21,9 +21,7 @@ namespace GestionHospital
 
         public Form1(){
             InitializeComponent();
-            usuario.Text = "Erik12";
-            cont.Text = "hola123";
-            cadCon =  @"data source=DESKTOP-I0DIDO3\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
+            cadCon = @"data source=DESKTOP-GJ16MIS\SQLEXPRESS;initial catalog=Hospital;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
             conexion = new SqlConnection(cadCon);
         }
 
