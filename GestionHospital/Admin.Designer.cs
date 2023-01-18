@@ -275,6 +275,7 @@
             this.costo.TabIndex = 47;
             this.costo.Text = "Costo Cita";
             this.costo.UseVisualStyleBackColor = true;
+            this.costo.Click += new System.EventHandler(this.costo_Click);
             // 
             // contextMenuStrip1
             // 

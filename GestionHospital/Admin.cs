@@ -226,5 +226,33 @@ namespace GestionHospital
         {
             new AgendaCitaAdmin(idDrCita.Text, idPacienteCita.Text,cadCon).Show();
         }
+
+        private void costo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conexion.Open();
+                SqlCommand comando = new SqlCommand("SELECT SUM(Costo) as Costo\r\nFROM (\r\n    (SELECT Costo from Historial as h \r\n    inner join HistorialEstudios as hm on h.idHistorial = hm.idHistorial \r\n    inner join Estudios as m on hm.idEstudio = m.idEstudio \r\n    where h.idCita = @idCita)\r\n    UNION\r\n    (SELECT Costo from Historial as h \r\n    inner join HistorialMedicamento as hm on h.idHistorial = hm.idHistorial \r\n    inner join Medicamento as m on hm.idMedicamento = m.idMedicamento \r\n    where h.idCita = @idCita)\r\n    UNION\r\n    (SELECT Costo from Historial as h \r\n    inner join HistorialTratamiento as hm on h.idHistorial = hm.idHistorial \r\n    inner join Tratamiento as m on hm.idTratamiento = m.idTratamiento \r\n    where h.idCita = @idCita)\r\n) as costs", conexion);
+                comando.Parameters.AddWithValue("idCita", idCitaTxtCosto.Text);
+                SqlCommand comando2 = new SqlCommand("SELECT Nombre, Costo FROM (  (SELECT Nombre, Costo from Historial as h  inner join HistorialEstudios as hm on h.idHistorial = hm.idHistorial  inner join Estudios as m on hm.idEstudio = m.idEstudio  where h.idCita = @idCita)  UNION  (SELECT Nombre, Costo from Historial as h  inner join HistorialMedicamento as hm on h.idHistorial = hm.idHistorial  inner join Medicamento as m on hm.idMedicamento = m.idMedicamento  where h.idCita = @idCita)  UNION  (SELECT Nombre, Costo from Historial as h  inner join HistorialTratamiento as hm on h.idHistorial = hm.idHistorial  inner join Tratamiento as m on hm.idTratamiento = m.idTratamiento  where h.idCita = @idCita) ) as names_costs", conexion);
+                comando2.Parameters.AddWithValue("idCita", idCitaTxtCosto.Text);
+
+                SqlDataAdapter consulta = new SqlDataAdapter(comando);
+                DataTable dt = new DataTable();
+                consulta.Fill(dt);
+
+                SqlDataAdapter consulta2 = new SqlDataAdapter(comando2);
+                DataTable dt2 = new DataTable();
+                consulta2.Fill(dt2);
+
+                costoLabel.Text = dt.Rows[0][0].ToString();
+                listaCitas.DataSource = dt2;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally { conexion.Close(); }
+        }
     }
 }
